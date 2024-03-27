@@ -128,7 +128,23 @@ function App() {
   }
 
 
-
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      mainApi.checkTok(token)
+        .then((userInfo) => {
+          if (userInfo) {
+            setLoggIn(true);
+            // Не понимаю почему, но раскомментирование этого когда приводит к рекурсивному вызову :/
+            // setCurUser(userInfo);
+            console.log("+");
+          } else {
+            setLoggIn(false)
+            console.log("-");
+          }
+        });
+    }
+  });
   return (
     <CurrentUserContext.Provider value={ currentUser }>
       <div className="page">

@@ -12,6 +12,20 @@ const Anketa = (props) => {
   const [additionalQuestion4, setAdditionalQuestion4] = useState('');
   const [isFinished, setIsFinished] = useState(false);
   const [bankruptcyConclusion, setBankruptcyConclusion] = useState('');
+  const [nextDisabled, setNextDisabled] = useState(true);
+
+  const anketaEnded = () => {
+    let allAddQ = (additionalQuestion1 !== '' &&
+    additionalQuestion2 !== '' &&
+    additionalQuestion3 !== '' &&
+    additionalQuestion4 !== '') // All Additional questions are answered
+
+    return !(debtAmount === "more1" && (payDelay === 'yes' || payDelay === 'no' && payToOneCreditor !== '') ||
+    debtAmount === "less1more500" && (payDelay === 'yes' || payDelay === 'no' && (payToOneCreditor === 'yes' || allAddQ )) ||
+    debtAmount === "more25less500" && (payToOneCreditor === 'yes' || allAddQ ) ||
+    debtAmount === "less25" && (payToOneCreditor !== '')
+    )
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -519,7 +533,7 @@ const Anketa = (props) => {
           )}
 
           {!isFinished && (
-            <button type="submit">Далее</button>
+            <button type="submit" disabled={anketaEnded()}>Далее</button>
           )}
         </form>
       </div>

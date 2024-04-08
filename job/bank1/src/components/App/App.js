@@ -52,10 +52,10 @@ function App() {
     }
   }
 
-  function registerHandle(name, email, password) {
+  function registerHandle(name, email, password, anketa) {
     setLoad(true);
     mainApi
-      .register(name, email, password)
+      .register(name, email, password, anketa)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("token", res.token);

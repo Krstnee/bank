@@ -115,7 +115,7 @@ li button {
 .usefull__doc{
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 100%;
   justify-content: space-between;
 }
 .usefull__dows{

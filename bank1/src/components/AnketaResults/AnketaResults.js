@@ -11,8 +11,8 @@ const AnketaResults = (props) => {
                       (anketaData.debtAmount === 'more25less500') && ('От 25 тыс.₽ до 500 тыс.₽')) || (
                       (anketaData.debtAmount === 'less1more500') && ('От 500 тыс.₽ до 1 млн₽')) || (
                       (anketaData.debtAmount === 'more1') && ('Более 1 млн₽'));
-  const payDelay = ((anketaData.payDelay === 'yes') && ('Да')) || 'Нет';
-  const payToOneCreditor = ((anketaData.payToOneCreditor === 'yes') && ('Да')) || 'Нет';
+  const payDelay = ((anketaData.payDelay === 'yes') && ('Да, я не плачу')) || 'Нет, я плачу';
+  const payToOneCreditor = ((anketaData.payToOneCreditor === 'yes') && ('Да, не смогу заплатить')) || 'Нет, смогу заплатить';
   const additionalQuestion1 = ((anketaData.additionalQuestion1 === 'yes') && ('Да')) || 'Нет';
   const additionalQuestion2 = ((anketaData.additionalQuestion2 === 'yes') && ('Да')) || 'Нет';
   const additionalQuestion3 = ((anketaData.additionalQuestion3 === 'yes') && ('Да')) || 'Нет';

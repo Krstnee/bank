@@ -309,7 +309,7 @@ let link = ''
                     checked={payToOneCreditor === "yes"}
                     onChange={(e) => setPayToOneCreditor(e.target.value)}
                   />
-                  Да, не смогу заплатить
+                  Не смогу заплатить
                 </label>
                 <label>
                   <input
@@ -318,7 +318,7 @@ let link = ''
                     checked={payToOneCreditor === "no"}
                     onChange={(e) => setPayToOneCreditor(e.target.value)}
                   />
-                  Нет, смогу заплатить
+                  Смогу заплатить, но не всем
                 </label>
               </div>
             </>
